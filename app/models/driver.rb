@@ -1,2 +1,6 @@
 class Driver < ApplicationRecord
-end
+    has_one :bus
+  
+    validates :name, :email, :password_digest, presence: true
+  end
+  
