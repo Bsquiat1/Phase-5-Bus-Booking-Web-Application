@@ -1,45 +1,50 @@
-class CustomersController < ApplicationController
-    before_action :set_customer, only: [:show, :update, :destroy]
-  
-    def index
-      @customers = Customer.all
-      render json: @customers
-    end
-  
-    def show
-      render json: @customer
-    end
-  
-    def create
-      @customer = Customer.new(customer_params)
-  
-      if @customer.save
-        render json: @customer, status: :created
-      else
-        render json: @customer.errors, status: :unprocessable_entity
-      end
-    end
-  
-    def update
-      if @customer.update(customer_params)
-        render json: @customer
-      else
-        render json: @customer.errors, status: :unprocessable_entity
-      end
-    end
-  
-    def destroy
-      @customer.destroy
-    end
-  
-    private
-  
-    def set_customer
-      @customer = Customer.find(params[:id])
-    end
-  
-    def customer_params
-      params.require(:customer).permit(:name, :email, :password)
+class BookingsController < ApplicationController
+  before_action :authenticate_user
+  before_action :set_booking, only: [:show, :update, :destroy]
+
+  # GET /bookings
+  def index
+    @bookings = Booking.all
+    render json: @bookings
+  end
+
+  # GET /bookings/:id
+  def show
+    render json: @booking
+  end
+
+  # POST /bookings
+  def create
+    @booking = Booking.new(booking_params)
+
+    if @booking.save
+      render json: @booking, status: :created
+    else
+      render json: @booking.errors, status: :unprocessable_entity
     end
   end
-  
+
+  # PUT /bookings/:id
+  def update
+    if @booking.update(booking_params)
+      render json: @booking
+    else
+      render json: @booking.errors, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE /bookings/:id
+  def destroy
+    @booking.destroy
+  end
+
+  private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:seat_number, :customer_id, :bus_id)
+  end
+end
