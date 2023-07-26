@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   resources :bookings
 
   # Additional routes can be added here for other custom functionality.
-
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   # Root route (optional)
   # root 'buses#index'
 end
