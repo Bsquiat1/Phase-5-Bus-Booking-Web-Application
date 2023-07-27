@@ -1,17 +1,8 @@
+# app/controllers/bookings_controller.rb
+
 class BookingsController < ApplicationController
   before_action :authenticate_user
   before_action :set_booking, only: [:show, :update, :destroy]
-
-  # GET /bookings
-  def index
-    @bookings = Booking.all
-    render json: @bookings
-  end
-
-  # GET /bookings/:id
-  def show
-    render json: @booking
-  end
 
   # POST /bookings
   def create
@@ -31,11 +22,6 @@ class BookingsController < ApplicationController
     else
       render json: @booking.errors, status: :unprocessable_entity
     end
-  end
-
-  # DELETE /bookings/:id
-  def destroy
-    @booking.destroy
   end
 
   private

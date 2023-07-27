@@ -1,3 +1,6 @@
+
+# app/models/booking.rb
+
 class Booking < ApplicationRecord
   belongs_to :customer
   belongs_to :bus
