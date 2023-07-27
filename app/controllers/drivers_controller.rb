@@ -1,3 +1,5 @@
+# app/controllers/drivers_controller.rb
+
 class DriversController < ApplicationController
   before_action :authenticate_user
   before_action :set_driver, only: [:show, :update, :destroy]
@@ -45,6 +47,6 @@ class DriversController < ApplicationController
   end
 
   def driver_params
-    params.require(:driver).permit(:name, :email)
+    params.require(:driver).permit(:name, :email, :password, :password_confirmation, :registration_number, :route)
   end
 end

@@ -48,3 +48,12 @@ FOREIGN KEY ("bus_id")
   [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
   [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
   [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRegistrationNumberAndRouteToDrivers (20230727063103)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (89.2ms)[0m  [1m[35mALTER TABLE "drivers" ADD "registration_number" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "drivers" ADD "route" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (28.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230727063103"]]
+  [1m[36mTRANSACTION (166.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

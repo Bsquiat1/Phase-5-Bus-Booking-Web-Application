@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_25_200204) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_27_063103) do
   create_table "bookings", force: :cascade do |t|
     t.integer "seat_number", null: false
     t.integer "customer_id", null: false
@@ -47,6 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_25_200204) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "registration_number"
+    t.string "route"
   end
 
   add_foreign_key "bookings", "buses"

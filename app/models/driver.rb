@@ -1,6 +1,12 @@
+# app/models/driver.rb
+
 class Driver < ApplicationRecord
-    has_one :bus
-  
-    validates :name, :email, :password_digest, presence: true
-  end
-  
+  has_many :buses
+
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :registration_number, presence: true
+  validates :route, presence: true
+
+  has_secure_password
+end
