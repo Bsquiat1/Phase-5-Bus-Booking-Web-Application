@@ -49,4 +49,11 @@ class DriversController < ApplicationController
   def driver_params
     params.require(:driver).permit(:name, :email, :password, :password_confirmation, :registration_number, :route)
   end
+  def authenticate_user
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+    else
+      redirect_to login_url, alert: 'Please log in to continue'
+    end
+  end
 end

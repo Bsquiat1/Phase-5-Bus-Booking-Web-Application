@@ -1,23 +1,32 @@
-# Clear existing data
-Booking.destroy_all
-Customer.destroy_all
-Bus.destroy_all
-Driver.destroy_all
+# seeds.rb
 
-# Create drivers
-driver1 = Driver.create(name: 'John Doe', email: 'john@example.com', password: 'password123', password_confirmation: 'password123')
-driver2 = Driver.create(name: 'Jane Smith', email: 'jane@example.com', password: 'password456', password_confirmation: 'password456')
+# Admins
+admins = Admin.create!([
+  { name: 'Admin1', email: 'admin1@example.com', password_digest: 'password1' },
+  { name: 'Admin2', email: 'admin2@example.com', password_digest: 'password2' }
+])
 
-# Create customers
-customer1 = Customer.create(name: 'Alice Johnson', email: 'alice@example.com', password: 'password789', password_confirmation: 'password789')
-customer2 = Customer.create(name: 'Bob Anderson', email: 'bob@example.com', password: 'password321', password_confirmation: 'password321')
+# Drivers
+drivers = Driver.create!([
+  { name: 'Driver1', email: 'driver1@example.com', password_digest: 'password1', admin_id: admins.first.id, registration_number: 'ABC123', route: 'Route1' },
+  { name: 'Driver2', email: 'driver2@example.com', password_digest: 'password2', admin_id: admins.last.id, registration_number: 'XYZ789', route: 'Route2' }
+])
 
-# Create buses
-bus1 = Bus.create(number_of_seats: 50, cost_per_seat: 500, route: 'Nairobi to Mombasa', time_of_travel: Time.now, driver: driver1, registration_number: 'KCA123X')
-bus2 = Bus.create(number_of_seats: 40, cost_per_seat: 400, route: 'Nairobi to Kisumu', time_of_travel: Time.now, driver: driver2, registration_number: 'KCB456Y')
+# Buses
+buses = Bus.create!([
+  { number_of_seats: 50, cost_per_seat: 10.5, route: 'Route1', time_of_travel: DateTime.now + 1.day, driver_id: drivers.first.id, registration_number: 'ABC123' },
+  { number_of_seats: 60, cost_per_seat: 12.5, route: 'Route2', time_of_travel: DateTime.now + 2.days, driver_id: drivers.last.id, registration_number: 'XYZ789' }
+])
 
-# Create bookings
-booking1 = Booking.create(seat_number: 10, customer: customer1, bus: bus1)
-booking2 = Booking.create(seat_number: 5, customer: customer2, bus: bus2)
+# Customers
+customers = Customer.create!([
+  { name: 'Customer1', email: 'customer1@example.com', password_digest: 'password1', admin_id: admins.first.id },
+  { name: 'Customer2', email: 'customer2@example.com', password_digest: 'password2', admin_id: admins.last.id }
+])
 
-puts 'Seed data created successfully!'
+# Bookings
+bookings = Booking.create!([
+  { seat_number: 1, customer_id: customers.first.id, bus_id: buses.first.id },
+  { seat_number: 2, customer_id: customers.last.id, bus_id: buses.last.id }
+])
+puts "done seeding"

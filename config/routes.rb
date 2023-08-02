@@ -21,4 +21,7 @@ Rails.application.routes.draw do
 
   # Root route (optional)
   # root 'buses#index'
+  #Routes for admins_controller
+  resources :admins
+  
 end

@@ -4,6 +4,8 @@ class CreateCustomers < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :email
       t.string :password_digest
+      t.references :admin, foreign_key: true, null: false
+      
 
       t.timestamps
     end
