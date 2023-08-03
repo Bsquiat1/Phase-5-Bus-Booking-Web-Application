@@ -15,7 +15,7 @@ drivers = Driver.create!([
 # Buses
 buses = Bus.create!([
   { name: 'Nairobi Express',number_of_seats: 50, cost_per_seat: 10.5, route: 'Route1', time_of_travel: DateTime.now + 1.day, driver_id: drivers.first.id, registration_number: 'ABC123' },
-  { name: 'Lake Victoria Shuttle',number_of_seats: 60, cost_per_seat: 12.5, route: 'Route2', time_of_travel: DateTime.now + 2.days, driver_id: drivers.last.id, registration_number: 'XYZ789' }
+  { name: 'Lake Victoria Shuttle.',number_of_seats: 60, cost_per_seat: 12.5, route: 'Route2', time_of_travel: DateTime.now + 2.days, driver_id: drivers.last.id, registration_number: 'XYZ789' }
 ])
 
 # Customers
