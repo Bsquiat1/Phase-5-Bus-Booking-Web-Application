@@ -1,17 +1,15 @@
+# app/controllers/application_controller.rb
 class ApplicationController < ActionController::API
-    
-        
-      
-        protected
-      
-        def decode_token(token)
-          begin
-            body = JWT.decode(token, Rails.application.secrets.secret_key_base)[0]
-            HashWithIndifferentAccess.new body
-          rescue JWT::DecodeError => e
-            # Handle invalid token, e.g. return nil or raise an error
-            nil
-          end
-        end
-      
+  def authorize_request
+    header = request.headers['Authorization']
+    token = header.split(' ').last if header
+    begin
+      decoded = Jsonwebtoken.decode(token)
+      @current_user = User.find(decoded[:user_id]) if decoded
+    rescue ActiveRecord::RecordNotFound => e
+      render json: { error: e.message }, status: :unauthorized
+    rescue JWT::DecodeError => e
+      render json: { error: e.message }, status: :unauthorized
+    end
+  end
 end

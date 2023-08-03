@@ -1,7 +1,8 @@
 # app/models/driver.rb
 
 class Driver < ApplicationRecord
-  has_many :buses
+  has_many :buses, dependent: :destroy
+
   belongs_to :admin 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
