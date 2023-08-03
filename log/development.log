@@ -573,3 +573,119 @@ ActionController::RoutingError (No route matches [GET] "/login"):
   [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-08-03 10:32:37 +0300
+Started GET "/" for 127.0.0.1 at 2023-08-03 10:32:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 105.9ms | Allocations: 653)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 100.1ms | Allocations: 657)
+Completed 200 OK in 564ms (Views: 143.7ms | ActiveRecord: 0.0ms | Allocations: 7321)
+
+
+Completed 200 OK in 512ms (Views: 143.6ms | ActiveRecord: 0.0ms | Allocations: 7266)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-03 10:33:33 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | Allocations: 296)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 1049)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-03 10:33:33 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 16)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 10:34:00 +0300
+Processing by BusesController#index as HTML
+Completed 500 Internal Server Error in 492ms (ActiveRecord: 0.0ms | Allocations: 5764)
+
+
+  
+NameError (undefined local variable or method `cookies' for #<BusesController:0x00000000009e98>
+
+  return nil unless cookies.signed[:jwt_token]
+                    ^^^^^^^):
+  
+config/initializers/jwt_auth.rb:18:in `current_user'
+app/controllers/buses_controller.rb:6:in `index'
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 10:34:10 +0300
+Processing by BusesController#index as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2445)
+
+
+  
+NameError (undefined local variable or method `cookies' for #<BusesController:0x0000000000a000>
+
+  return nil unless cookies.signed[:jwt_token]
+                    ^^^^^^^):
+  
+config/initializers/jwt_auth.rb:18:in `current_user'
+app/controllers/buses_controller.rb:6:in `index'
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-08-03 10:34:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 10:36:43 +0300
+Processing by BusesController#index as HTML
+  [1m[36mBus Load (0.3ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (124.94ms)
+Completed 200 OK in 276ms (Views: 259.5ms | ActiveRecord: 1.7ms | Allocations: 4834)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameSuperToIsSuperadminInAdmins (20230803074650)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveSuperFromAdmins (20230803074940)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (167.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aadmins" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (60.4ms)[0m  [1m[32mINSERT INTO "aadmins" ("id","name","email","password_digest","created_at","updated_at")
+                     SELECT "id","name","email","password_digest","created_at","updated_at" FROM "admins"[0m
+  [1m[35m (113.1ms)[0m  [1m[35mDROP TABLE "admins"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "admins" ("id","name","email","password_digest","created_at","updated_at")
+                     SELECT "id","name","email","password_digest","created_at","updated_at" FROM "aadmins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aadmins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (27.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230803074940"]]
+  [1m[36mTRANSACTION (304.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (29.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameSuperToIsSuperadminInAdmins (20230803075143)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m

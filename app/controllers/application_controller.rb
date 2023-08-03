@@ -1,5 +1,6 @@
 # app/controllers/application_controller.rb
 class ApplicationController < ActionController::API
+  include ActionController::Cookies
   def authorize_request
     header = request.headers['Authorization']
     token = header.split(' ').last if header
