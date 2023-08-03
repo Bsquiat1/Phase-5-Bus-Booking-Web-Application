@@ -11,6 +11,6 @@ class Customer < ApplicationRecord
   validates :password, presence: true, length: { minimum: 4 }
   def generate_jwt
     payload = { user_id: id }
-    Jsonwebtoken.encode(payload)
+    jwt.encode(payload)
   end
 end
