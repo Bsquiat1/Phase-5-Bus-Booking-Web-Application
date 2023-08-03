@@ -1,27 +1,19 @@
 Rails.application.routes.draw do
-  # Routes for BusesController
-  resources :buses do
-    collection do
-      get 'search_by_route', to: 'buses#search_by_route'
-    end
-  end
+  # Authentication
+  post 'login', to: 'authentication#login'
 
-  # Routes for DriversController
-  resources :drivers
+  # Drivers
+  resources :drivers, except: [:new, :edit]
 
-  # Routes for CustomersController
-  resources :customers
+  # Customers
+  resources :customers, except: [:new, :edit]
 
-  # Routes for BookingsController
-  resources :bookings
+  # Buses
+  resources :buses, except: [:new, :edit]
 
-  # Authentication routes
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  # Bookings
+  resources :bookings, except: [:new, :edit]
 
-  # Root route (optional)
-  # root 'buses#index'
-  #Routes for admins_controller
-  resources :admins
-  
+  # Admins
+  resources :admins, except: [:new, :edit]
 end
