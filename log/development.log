@@ -689,3 +689,147 @@ Migrating to RenameSuperToIsSuperadminInAdmins (20230803075143)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 11:00:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BusesController#index as HTML
+  [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 32ms (Views: 12.7ms | ActiveRecord: 0.2ms | Allocations: 7340)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 11:00:52 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/bookings" for 127.0.0.1 at 2023-08-03 11:03:27 +0300
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (1.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+Completed 200 OK in 138ms (Views: 12.4ms | ActiveRecord: 1.2ms | Allocations: 2435)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddIsSuperadminToAdmins (20230803114842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (144.3ms)[0m  [1m[35mALTER TABLE "admins" ADD "is_superadmin" boolean DEFAULT 0[0m
+  [1m[36mActiveRecord::SchemaMigration Create (18.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230803114842"]]
+  [1m[36mTRANSACTION (249.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.7ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "admin@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:50:42.907157"], ["updated_at", "2023-08-03 11:50:42.907157"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (233.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "jerrie@koepp-anderson.example"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "jerrie@koepp-anderson.example"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:52:26.229849"], ["updated_at", "2023-08-03 11:52:26.229849"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (145.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "keri.cartwright@cassin.example"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "keri.cartwright@cassin.example"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:52:26.718316"], ["updated_at", "2023-08-03 11:52:26.718316"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (249.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mDriver Create (17.7ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at", "registration_number", "route") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Driver1"], ["email", "driver1@example.com"], ["password_digest", "[FILTERED]"], ["admin_id", 4], ["created_at", "2023-08-03 11:52:27.396821"], ["updated_at", "2023-08-03 11:52:27.396821"], ["registration_number", "ABC123"], ["route", "Route1"]]
+  [1m[36mTRANSACTION (148.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.5ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at", "registration_number", "route") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Driver2"], ["email", "driver2@example.com"], ["password_digest", "[FILTERED]"], ["admin_id", 5], ["created_at", "2023-08-03 11:52:27.878914"], ["updated_at", "2023-08-03 11:52:27.878914"], ["registration_number", "XYZ789"], ["route", "Route2"]]
+  [1m[36mTRANSACTION (152.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNameToBuses (20230803115339)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "buses" ADD "name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230803115339"]]
+  [1m[36mTRANSACTION (144.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "merle@friesen.test"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "merle@friesen.test"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:54:47.554897"], ["updated_at", "2023-08-03 11:54:47.554897"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (204.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "clifton.conn@torphy-haley.test"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "clifton.conn@torphy-haley.test"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:54:48.127547"], ["updated_at", "2023-08-03 11:54:48.127547"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (314.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "chun@howe-gibson.test"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "chun@howe-gibson.test"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:56:02.775497"], ["updated_at", "2023-08-03 11:56:02.775497"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (174.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "connie_oconner@batz.example"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "connie_oconner@batz.example"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:56:03.284602"], ["updated_at", "2023-08-03 11:56:03.284602"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (184.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "saundra_cormier@labadie.example"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.7ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at", "registration_number", "route") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Driver1"], ["email", "saundra_cormier@labadie.example"], ["password_digest", "[FILTERED]"], ["admin_id", 8], ["created_at", "2023-08-03 11:56:03.812899"], ["updated_at", "2023-08-03 11:56:03.812899"], ["registration_number", "ABC123"], ["route", "Route1"]]
+  [1m[36mTRANSACTION (152.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "alphonso@swaniawski.example"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.3ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at", "registration_number", "route") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Driver2"], ["email", "alphonso@swaniawski.example"], ["password_digest", "[FILTERED]"], ["admin_id", 9], ["created_at", "2023-08-03 11:56:04.307058"], ["updated_at", "2023-08-03 11:56:04.307058"], ["registration_number", "XYZ789"], ["route", "Route2"]]
+  [1m[36mTRANSACTION (183.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBus Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "buses" WHERE "buses"."registration_number" = ? LIMIT ?[0m  [["registration_number", "ABC123"], ["LIMIT", 1]]
+  [1m[36mBus Create (0.8ms)[0m  [1m[32mINSERT INTO "buses" ("number_of_seats", "cost_per_seat", "route", "time_of_travel", "driver_id", "registration_number", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number_of_seats", 50], ["cost_per_seat", 10.5], ["route", "Route1"], ["time_of_travel", "2023-08-04 11:56:04.501200"], ["driver_id", 3], ["registration_number", "ABC123"], ["created_at", "2023-08-03 11:56:04.581348"], ["updated_at", "2023-08-03 11:56:04.581348"], ["name", "Nairobi Express"]]
+  [1m[36mTRANSACTION (336.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBus Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "buses" WHERE "buses"."registration_number" = ? LIMIT ?[0m  [["registration_number", "XYZ789"], ["LIMIT", 1]]
+  [1m[36mBus Create (0.6ms)[0m  [1m[32mINSERT INTO "buses" ("number_of_seats", "cost_per_seat", "route", "time_of_travel", "driver_id", "registration_number", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number_of_seats", 60], ["cost_per_seat", 12.5], ["route", "Route2"], ["time_of_travel", "2023-08-05 11:56:04.501610"], ["driver_id", 4], ["registration_number", "XYZ789"], ["created_at", "2023-08-03 11:56:04.968635"], ["updated_at", "2023-08-03 11:56:04.968635"], ["name", "Lake Victoria Shuttle"]]
+  [1m[36mTRANSACTION (151.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "bernie_hammes@rogahn-breitenberg.example"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Customer1"], ["email", "bernie_hammes@rogahn-breitenberg.example"], ["password_digest", "[FILTERED]"], ["admin_id", 8], ["created_at", "2023-08-03 11:56:05.530264"], ["updated_at", "2023-08-03 11:56:05.530264"]]
+  [1m[36mTRANSACTION (252.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "luciano.sporer@corwin.test"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Customer2"], ["email", "luciano.sporer@corwin.test"], ["password_digest", "[FILTERED]"], ["admin_id", 9], ["created_at", "2023-08-03 11:56:06.170894"], ["updated_at", "2023-08-03 11:56:06.170894"]]
+  [1m[36mTRANSACTION (147.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/booking.rb:15:in `seat_number_uniqueness_for_bus'
+  [1m[36mBooking Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."bus_id" = ? AND "bookings"."seat_number" = ? LIMIT ?[0m  [["bus_id", 1], ["seat_number", 1], ["LIMIT", 1]]
+  ↳ app/models/booking.rb:15:in `seat_number_uniqueness_for_bus'
+  [1m[36mBooking Create (16.4ms)[0m  [1m[32mINSERT INTO "bookings" ("seat_number", "customer_id", "bus_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seat_number", 1], ["customer_id", 1], ["bus_id", 1], ["created_at", "2023-08-03 11:56:06.417341"], ["updated_at", "2023-08-03 11:56:06.417341"]]
+  [1m[36mTRANSACTION (208.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/booking.rb:15:in `seat_number_uniqueness_for_bus'
+  [1m[36mBooking Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."bus_id" = ? AND "bookings"."seat_number" = ? LIMIT ?[0m  [["bus_id", 2], ["seat_number", 2], ["LIMIT", 1]]
+  ↳ app/models/booking.rb:15:in `seat_number_uniqueness_for_bus'
+  [1m[36mBooking Create (0.7ms)[0m  [1m[32mINSERT INTO "bookings" ("seat_number", "customer_id", "bus_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seat_number", 2], ["customer_id", 2], ["bus_id", 2], ["created_at", "2023-08-03 11:56:06.654021"], ["updated_at", "2023-08-03 11:56:06.654021"]]
+  [1m[36mTRANSACTION (141.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-08-03 14:57:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 49.4ms | Allocations: 528)
+Completed 200 OK in 514ms (Views: 54.0ms | ActiveRecord: 0.0ms | Allocations: 280999)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 14:57:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
