@@ -2,7 +2,7 @@
 
 class Customer < ApplicationRecord
   has_secure_password
-  has_many :bookings, dependent: :destroy
+  has_many :bookings
   has_many :buses, through: :bookings
 
   belongs_to :admin

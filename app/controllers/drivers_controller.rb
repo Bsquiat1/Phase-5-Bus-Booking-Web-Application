@@ -1,5 +1,7 @@
 # app/controllers/drivers_controller.rb
 class DriversController < ApplicationController
+  before_action :authorize_request, :current_user, only: [:create]
+
   before_action :set_driver, only: [:show, :update, :destroy]
 
   def index
