@@ -1,6 +1,7 @@
 # app/controllers/admins_controller.rb
 class AdminsController < ApplicationController
-  before_action :authorize_request
+  before_action :authorize_request, only: [:create]
+
   before_action :set_admin, only: [:show, :update, :destroy]
 
   def index
