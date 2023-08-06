@@ -1,32 +1,41 @@
-# seeds.rb
+# db/seeds.rb
 
-# Admins
-admins = Admin.create!([
-  { name: 'Admin1', email: 'admin1@example.com', password_digest: 'password1' },
-  { name: 'Admin2', email: 'admin2@example.com', password_digest: 'password2' }
-])
+# Seed data for admins
+admins = [
+  { name: 'Admin 1', email: 'admin1@example.com', password_digest: 'admin1password' },
+  { name: 'Admin 2', email: 'admin2@example.com', password_digest: 'admin2password' }
+]
 
-# Drivers
-drivers = Driver.create!([
-  { name: 'Driver1', email: 'driver1@example.com', password_digest: 'password1', admin_id: admins.first.id, registration_number: 'ABC123', route: 'Route1' },
-  { name: 'Driver2', email: 'driver2@example.com', password_digest: 'password2', admin_id: admins.last.id, registration_number: 'XYZ789', route: 'Route2' }
-])
+Admin.create!(admins)
 
-# Buses
-buses = Bus.create!([
-  { number_of_seats: 50, cost_per_seat: 10.5, route: 'Route1', time_of_travel: DateTime.now + 1.day, driver_id: drivers.first.id, registration_number: 'ABC123' },
-  { number_of_seats: 60, cost_per_seat: 12.5, route: 'Route2', time_of_travel: DateTime.now + 2.days, driver_id: drivers.last.id, registration_number: 'XYZ789' }
-])
+# Seed data for customers
+customers = [
+  { name: 'Customer 1', email: 'customer1@example.com', password: 'customer1password', admin: Admin.first },
+  { name: 'Customer 2', email: 'customer2@example.com', password: 'customer2password', admin: Admin.first }
+]
 
-# Customers
-customers = Customer.create!([
-  { name: 'Customer1', email: 'customer1@example.com', password_digest: 'password1', admin_id: admins.first.id },
-  { name: 'Customer2', email: 'customer2@example.com', password_digest: 'password2', admin_id: admins.last.id }
-])
+Customer.create!(customers)
 
-# Bookings
-bookings = Booking.create!([
-  { seat_number: 1, customer_id: customers.first.id, bus_id: buses.first.id },
-  { seat_number: 2, customer_id: customers.last.id, bus_id: buses.last.id }
-])
-puts "done seeding"
+# Seed data for drivers
+drivers = [
+  { name: 'Driver 1', email: 'driver1@example.com', password: 'driver1password', admin: Admin.first, registration_number: 'DRIVER001', route: 'Route 1' },
+  { name: 'Driver 2', email: 'driver2@example.com', password: 'driver2password', admin: Admin.first, registration_number: 'DRIVER002', route: 'Route 2' }
+]
+
+Driver.create!(drivers)
+
+# Seed data for buses
+buses = [
+  { number_of_seats: 50, cost_per_seat: 10.0, route: 'Route 1', time_of_travel: Time.now, driver: Driver.first, registration_number: 'BUS001' },
+  { number_of_seats: 40, cost_per_seat: 8.5, route: 'Route 2', time_of_travel: Time.now, driver: Driver.second, registration_number: 'BUS002' }
+]
+
+Bus.create!(buses)
+
+# Seed data for bookings
+bookings = [
+  { seat_number: 1, customer: Customer.first, bus: Bus.first },
+  { seat_number: 5, customer: Customer.second, bus: Bus.first }
+]
+
+Booking.create!(bookings)
