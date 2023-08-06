@@ -838,3 +838,48 @@ Processing by AdminsController#index as */*
 Completed 200 OK in 65ms (Views: 62.4ms | ActiveRecord: 2.8ms | Allocations: 33632)
 
 
+Started GET "/buses" for ::1 at 2023-08-06 13:05:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BusesController#index as */*
+  Parameters: {"bus"=>{}}
+  [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  ↳ app/controllers/buses_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 20ms (Views: 7.0ms | ActiveRecord: 0.9ms | Allocations: 20729)
+
+
+Started GET "/customers" for ::1 at 2023-08-06 13:06:13 +0300
+Processing by CustomersController#index as */*
+  Parameters: {"customer"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 562)
+
+
+Started GET "/customers" for ::1 at 2023-08-06 13:07:07 +0300
+Processing by CustomersController#index as */*
+  Parameters: {"customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 1.4ms | Allocations: 877)
+
+
+Started GET "/bookings" for ::1 at 2023-08-06 13:07:35 +0300
+Processing by BookingsController#index as */*
+  Parameters: {"booking"=>{}}
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 839)
+
+
+Started GET "/bookings" for ::1 at 2023-08-06 13:08:10 +0300
+Processing by BookingsController#index as */*
+  Parameters: {"booking"=>{}}
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/bookings_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 1.2ms | Allocations: 866)
+
+
