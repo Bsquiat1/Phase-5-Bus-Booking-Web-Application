@@ -5,7 +5,7 @@ class Admin < ApplicationRecord
     has_many :customers
     validates :name, presence: true
     validates :email, presence: true, uniqueness: true
-    validates :password, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 4 }
     def generate_jwt
         payload = { user_id: id, is_admin: true }
         Jsonwebtoken.encode(payload)

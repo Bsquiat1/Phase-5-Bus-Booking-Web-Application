@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
-  
 
   def authorize_request
     header = request.headers['Authorization']

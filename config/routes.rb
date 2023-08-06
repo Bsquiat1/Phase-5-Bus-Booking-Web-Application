@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Authentication
-  post 'login', to: 'authentication#login'
-
+  get '/login', to: 'sessions#new', as: :login
+  get '/signup', to: 'registrations#new', as: :signup
   # Drivers
   resources :drivers, except: [:new, :edit]
 
