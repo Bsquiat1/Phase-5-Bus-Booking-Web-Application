@@ -573,3 +573,628 @@ ActionController::RoutingError (No route matches [GET] "/login"):
   [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-08-03 10:32:37 +0300
+Started GET "/" for 127.0.0.1 at 2023-08-03 10:32:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 105.9ms | Allocations: 653)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 100.1ms | Allocations: 657)
+Completed 200 OK in 564ms (Views: 143.7ms | ActiveRecord: 0.0ms | Allocations: 7321)
+
+
+Completed 200 OK in 512ms (Views: 143.6ms | ActiveRecord: 0.0ms | Allocations: 7266)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-03 10:33:33 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | Allocations: 296)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 1049)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-03 10:33:33 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 16)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 10:34:00 +0300
+Processing by BusesController#index as HTML
+Completed 500 Internal Server Error in 492ms (ActiveRecord: 0.0ms | Allocations: 5764)
+
+
+  
+NameError (undefined local variable or method `cookies' for #<BusesController:0x00000000009e98>
+
+  return nil unless cookies.signed[:jwt_token]
+                    ^^^^^^^):
+  
+config/initializers/jwt_auth.rb:18:in `current_user'
+app/controllers/buses_controller.rb:6:in `index'
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 10:34:10 +0300
+Processing by BusesController#index as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2445)
+
+
+  
+NameError (undefined local variable or method `cookies' for #<BusesController:0x0000000000a000>
+
+  return nil unless cookies.signed[:jwt_token]
+                    ^^^^^^^):
+  
+config/initializers/jwt_auth.rb:18:in `current_user'
+app/controllers/buses_controller.rb:6:in `index'
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-08-03 10:34:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 10:36:43 +0300
+Processing by BusesController#index as HTML
+  [1m[36mBus Load (0.3ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (124.94ms)
+Completed 200 OK in 276ms (Views: 259.5ms | ActiveRecord: 1.7ms | Allocations: 4834)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameSuperToIsSuperadminInAdmins (20230803074650)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveSuperFromAdmins (20230803074940)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (167.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aadmins" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (60.4ms)[0m  [1m[32mINSERT INTO "aadmins" ("id","name","email","password_digest","created_at","updated_at")
+                     SELECT "id","name","email","password_digest","created_at","updated_at" FROM "admins"[0m
+  [1m[35m (113.1ms)[0m  [1m[35mDROP TABLE "admins"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "admins" ("id","name","email","password_digest","created_at","updated_at")
+                     SELECT "id","name","email","password_digest","created_at","updated_at" FROM "aadmins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aadmins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (27.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230803074940"]]
+  [1m[36mTRANSACTION (304.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (29.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameSuperToIsSuperadminInAdmins (20230803075143)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 11:00:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BusesController#index as HTML
+  [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 32ms (Views: 12.7ms | ActiveRecord: 0.2ms | Allocations: 7340)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 11:00:52 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/bookings" for 127.0.0.1 at 2023-08-03 11:03:27 +0300
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (1.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+Completed 200 OK in 138ms (Views: 12.4ms | ActiveRecord: 1.2ms | Allocations: 2435)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddIsSuperadminToAdmins (20230803114842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (144.3ms)[0m  [1m[35mALTER TABLE "admins" ADD "is_superadmin" boolean DEFAULT 0[0m
+  [1m[36mActiveRecord::SchemaMigration Create (18.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230803114842"]]
+  [1m[36mTRANSACTION (249.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.7ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "admin@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:50:42.907157"], ["updated_at", "2023-08-03 11:50:42.907157"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (233.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "jerrie@koepp-anderson.example"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "jerrie@koepp-anderson.example"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:52:26.229849"], ["updated_at", "2023-08-03 11:52:26.229849"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (145.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "keri.cartwright@cassin.example"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "keri.cartwright@cassin.example"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:52:26.718316"], ["updated_at", "2023-08-03 11:52:26.718316"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (249.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mDriver Create (17.7ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at", "registration_number", "route") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Driver1"], ["email", "driver1@example.com"], ["password_digest", "[FILTERED]"], ["admin_id", 4], ["created_at", "2023-08-03 11:52:27.396821"], ["updated_at", "2023-08-03 11:52:27.396821"], ["registration_number", "ABC123"], ["route", "Route1"]]
+  [1m[36mTRANSACTION (148.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.5ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at", "registration_number", "route") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Driver2"], ["email", "driver2@example.com"], ["password_digest", "[FILTERED]"], ["admin_id", 5], ["created_at", "2023-08-03 11:52:27.878914"], ["updated_at", "2023-08-03 11:52:27.878914"], ["registration_number", "XYZ789"], ["route", "Route2"]]
+  [1m[36mTRANSACTION (152.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNameToBuses (20230803115339)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "buses" ADD "name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230803115339"]]
+  [1m[36mTRANSACTION (144.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "merle@friesen.test"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "merle@friesen.test"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:54:47.554897"], ["updated_at", "2023-08-03 11:54:47.554897"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (204.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "clifton.conn@torphy-haley.test"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "clifton.conn@torphy-haley.test"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:54:48.127547"], ["updated_at", "2023-08-03 11:54:48.127547"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (314.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "chun@howe-gibson.test"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "chun@howe-gibson.test"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:56:02.775497"], ["updated_at", "2023-08-03 11:56:02.775497"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (174.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "connie_oconner@batz.example"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "connie_oconner@batz.example"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-03 11:56:03.284602"], ["updated_at", "2023-08-03 11:56:03.284602"], ["is_superadmin", 1]]
+  [1m[36mTRANSACTION (184.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "saundra_cormier@labadie.example"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.7ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at", "registration_number", "route") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Driver1"], ["email", "saundra_cormier@labadie.example"], ["password_digest", "[FILTERED]"], ["admin_id", 8], ["created_at", "2023-08-03 11:56:03.812899"], ["updated_at", "2023-08-03 11:56:03.812899"], ["registration_number", "ABC123"], ["route", "Route1"]]
+  [1m[36mTRANSACTION (152.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "alphonso@swaniawski.example"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.3ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at", "registration_number", "route") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Driver2"], ["email", "alphonso@swaniawski.example"], ["password_digest", "[FILTERED]"], ["admin_id", 9], ["created_at", "2023-08-03 11:56:04.307058"], ["updated_at", "2023-08-03 11:56:04.307058"], ["registration_number", "XYZ789"], ["route", "Route2"]]
+  [1m[36mTRANSACTION (183.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBus Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "buses" WHERE "buses"."registration_number" = ? LIMIT ?[0m  [["registration_number", "ABC123"], ["LIMIT", 1]]
+  [1m[36mBus Create (0.8ms)[0m  [1m[32mINSERT INTO "buses" ("number_of_seats", "cost_per_seat", "route", "time_of_travel", "driver_id", "registration_number", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number_of_seats", 50], ["cost_per_seat", 10.5], ["route", "Route1"], ["time_of_travel", "2023-08-04 11:56:04.501200"], ["driver_id", 3], ["registration_number", "ABC123"], ["created_at", "2023-08-03 11:56:04.581348"], ["updated_at", "2023-08-03 11:56:04.581348"], ["name", "Nairobi Express"]]
+  [1m[36mTRANSACTION (336.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBus Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "buses" WHERE "buses"."registration_number" = ? LIMIT ?[0m  [["registration_number", "XYZ789"], ["LIMIT", 1]]
+  [1m[36mBus Create (0.6ms)[0m  [1m[32mINSERT INTO "buses" ("number_of_seats", "cost_per_seat", "route", "time_of_travel", "driver_id", "registration_number", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number_of_seats", 60], ["cost_per_seat", 12.5], ["route", "Route2"], ["time_of_travel", "2023-08-05 11:56:04.501610"], ["driver_id", 4], ["registration_number", "XYZ789"], ["created_at", "2023-08-03 11:56:04.968635"], ["updated_at", "2023-08-03 11:56:04.968635"], ["name", "Lake Victoria Shuttle"]]
+  [1m[36mTRANSACTION (151.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "bernie_hammes@rogahn-breitenberg.example"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Customer1"], ["email", "bernie_hammes@rogahn-breitenberg.example"], ["password_digest", "[FILTERED]"], ["admin_id", 8], ["created_at", "2023-08-03 11:56:05.530264"], ["updated_at", "2023-08-03 11:56:05.530264"]]
+  [1m[36mTRANSACTION (252.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "luciano.sporer@corwin.test"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "password_digest", "admin_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Customer2"], ["email", "luciano.sporer@corwin.test"], ["password_digest", "[FILTERED]"], ["admin_id", 9], ["created_at", "2023-08-03 11:56:06.170894"], ["updated_at", "2023-08-03 11:56:06.170894"]]
+  [1m[36mTRANSACTION (147.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/booking.rb:15:in `seat_number_uniqueness_for_bus'
+  [1m[36mBooking Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."bus_id" = ? AND "bookings"."seat_number" = ? LIMIT ?[0m  [["bus_id", 1], ["seat_number", 1], ["LIMIT", 1]]
+  ↳ app/models/booking.rb:15:in `seat_number_uniqueness_for_bus'
+  [1m[36mBooking Create (16.4ms)[0m  [1m[32mINSERT INTO "bookings" ("seat_number", "customer_id", "bus_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seat_number", 1], ["customer_id", 1], ["bus_id", 1], ["created_at", "2023-08-03 11:56:06.417341"], ["updated_at", "2023-08-03 11:56:06.417341"]]
+  [1m[36mTRANSACTION (208.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/booking.rb:15:in `seat_number_uniqueness_for_bus'
+  [1m[36mBooking Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."bus_id" = ? AND "bookings"."seat_number" = ? LIMIT ?[0m  [["bus_id", 2], ["seat_number", 2], ["LIMIT", 1]]
+  ↳ app/models/booking.rb:15:in `seat_number_uniqueness_for_bus'
+  [1m[36mBooking Create (0.7ms)[0m  [1m[32mINSERT INTO "bookings" ("seat_number", "customer_id", "bus_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seat_number", 2], ["customer_id", 2], ["bus_id", 2], ["created_at", "2023-08-03 11:56:06.654021"], ["updated_at", "2023-08-03 11:56:06.654021"]]
+  [1m[36mTRANSACTION (141.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-08-03 14:57:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 49.4ms | Allocations: 528)
+Completed 200 OK in 514ms (Views: 54.0ms | ActiveRecord: 0.0ms | Allocations: 280999)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 14:57:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/login" for 127.0.0.1 at 2023-08-03 15:12:15 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 18ms (ActiveRecord: 0.0ms | Allocations: 2189)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 15:12:18 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 45)
+
+
+Started GET "/signup" for 127.0.0.1 at 2023-08-03 15:12:34 +0300
+Processing by RegistrationsController#new as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+Started GET "/sign%20up" for 127.0.0.1 at 2023-08-03 15:12:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/sign%20up"):
+  
+Started GET "/signup" for 127.0.0.1 at 2023-08-03 15:12:55 +0300
+Processing by RegistrationsController#new as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 56)
+
+
+Started GET "/login_path" for 127.0.0.1 at 2023-08-03 15:13:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/login_path"):
+  
+Started GET "/drivers" for 127.0.0.1 at 2023-08-03 15:13:45 +0300
+Processing by DriversController#index as HTML
+  [1m[36mDriver Load (0.6ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  ↳ app/controllers/drivers_controller.rb:7:in `index'
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 2.3ms | Allocations: 10574)
+
+
+  
+SyntaxError (/root/p5/Phase-5-Bus-Booking-Web-Application/app/serializers/driver_serializer.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  has_many :buses
+           ^
+):
+  
+app/serializers/driver_serializer.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/serializers/driver_serializer.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/drivers_controller.rb:7:in `index'
+Started GET "/drivers" for 127.0.0.1 at 2023-08-03 15:15:08 +0300
+Processing by DriversController#index as HTML
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.7ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 1]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.3ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 2]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 3]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.1ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 4]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (153.94ms)
+Completed 200 OK in 369ms (Views: 356.8ms | ActiveRecord: 5.1ms | Allocations: 23284)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-03 15:15:30 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.0ms | Allocations: 303)
+Completed 200 OK in 20ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 2406)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 15:15:38 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 90)
+
+
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 15:16:19 +0300
+Processing by BusesController#index as HTML
+  [1m[36mBus Load (0.8ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.3ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bus_id" = ?[0m  [["bus_id", 1]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bus_id" = ?[0m  [["bus_id", 2]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (116.53ms)
+Completed 200 OK in 127ms (Views: 122.4ms | ActiveRecord: 3.3ms | Allocations: 12285)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 15:16:27 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 48)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 15:16:36 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 29)
+
+
+Started GET "/sign%20up" for 127.0.0.1 at 2023-08-03 15:16:49 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/sign%20up"):
+  
+Started GET "/signup" for 127.0.0.1 at 2023-08-03 15:17:06 +0300
+Processing by RegistrationsController#new as HTML
+Completed 204 No Content in 5ms (ActiveRecord: 0.0ms | Allocations: 93)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-03 15:17:49 +0300
+Processing by CustomersController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2231)
+
+
+  
+NameError (uninitialized constant ApplicationController::Jsonwebtoken
+
+      decoded = Jsonwebtoken.decode(token)
+                ^^^^^^^^^^^^):
+  
+app/controllers/application_controller.rb:8:in `authorize_request'
+Started GET "/customers" for 127.0.0.1 at 2023-08-03 15:21:11 +0300
+  
+LoadError (cannot load such file -- jsonwebtoken
+Did you mean?  json/ext):
+  
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/customers_controller.rb:2:in `<main>'
+Started GET "/customers" for 127.0.0.1 at 2023-08-03 15:29:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- jsonwebtoken
+Did you mean?  json/ext):
+  
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/customers_controller.rb:2:in `<main>'
+Started GET "/customers" for 127.0.0.1 at 2023-08-03 15:29:52 +0300
+Processing by CustomersController#index as HTML
+Completed 500 Internal Server Error in 7ms (Allocations: 2233)
+
+
+  
+NameError (uninitialized constant ApplicationController::Jsonwebtoken
+
+      decoded = Jsonwebtoken.decode(token)
+                ^^^^^^^^^^^^):
+  
+app/controllers/application_controller.rb:9:in `authorize_request'
+Started GET "/customers" for 127.0.0.1 at 2023-08-03 15:30:31 +0300
+  
+LoadError (cannot load such file -- JWT):
+  
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/customers_controller.rb:2:in `<main>'
+Started GET "/customers" for 127.0.0.1 at 2023-08-03 15:30:49 +0300
+Processing by CustomersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.71ms)
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 95ms (Views: 93.0ms | Allocations: 1183)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-08-03 15:31:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+Started GET "/adminzs" for 127.0.0.1 at 2023-08-03 15:31:22 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/adminzs"):
+  
+Started GET "/admins" for 127.0.0.1 at 2023-08-03 15:31:27 +0300
+Processing by AdminsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | Allocations: 393)
+
+
+Started GET "/bookings" for 127.0.0.1 at 2023-08-03 15:31:36 +0300
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (0.1ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (73.43ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 6.7ms | Allocations: 19438)
+
+
+  
+SyntaxError (/root/p5/Phase-5-Bus-Booking-Web-Application/app/serializers/customer_serializer.rb:3: syntax error, unexpected ':', expecting `end'
+  has_many: bookings
+          ^
+):
+  
+app/serializers/customer_serializer.rb:3: syntax error, unexpected ':', expecting `end'
+app/serializers/customer_serializer.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/bookings_controller.rb:7:in `index'
+Started GET "/bookings" for 127.0.0.1 at 2023-08-03 15:32:29 +0300
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (0.1ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.6ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.1ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (100.18ms)
+Completed 200 OK in 121ms (Views: 114.0ms | ActiveRecord: 5.8ms | Allocations: 22482)
+
+
+Started GET "/admins" for 127.0.0.1 at 2023-08-03 15:32:54 +0300
+Processing by AdminsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 502)
+
+
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 15:33:02 +0300
+Processing by BusesController#index as HTML
+  [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.4ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBooking Load (0.4ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bus_id" = ?[0m  [["bus_id", 1]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBooking Load (0.7ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bus_id" = ?[0m  [["bus_id", 2]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (49.11ms)
+Completed 200 OK in 58ms (Views: 54.7ms | ActiveRecord: 2.5ms | Allocations: 12225)
+
+
+Started GET "/bookings" for 127.0.0.1 at 2023-08-03 15:33:30 +0300
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (1.0ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.94ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 1.8ms | Allocations: 5671)
+
+
+Started GET "/admins" for 127.0.0.1 at 2023-08-03 15:36:16 +0300
+Processing by AdminsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 220)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-03 15:36:29 +0300
+Processing by CustomersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 406)
+
+
+Started GET "/drivers" for 127.0.0.1 at 2023-08-03 15:36:47 +0300
+Processing by DriversController#index as HTML
+  [1m[36mDriver Load (0.7ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 1]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 2]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 3]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 4]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.42ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 1.5ms | Allocations: 6749)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 15:38:04 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 97)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 15:38:12 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 31)
+
+
+Started GET "/sign%20up" for 127.0.0.1 at 2023-08-03 15:38:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/sign%20up"):
+  
+Started GET "/login" for 127.0.0.1 at 2023-08-03 15:38:44 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 29)
+
+
+Started GET "/admins" for 127.0.0.1 at 2023-08-03 15:39:14 +0300
+Processing by AdminsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.54ms)
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 295)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-03 15:43:20 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 1ms (Allocations: 28)
+
+
+Started GET "/bookings" for 127.0.0.1 at 2023-08-03 15:45:38 +0300
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.3ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bookings_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.66ms)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 2.8ms | Allocations: 6013)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-03 15:45:51 +0300
+Processing by CustomersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 209)
+
+
+Started GET "/drivers" for 127.0.0.1 at 2023-08-03 15:46:00 +0300
+Processing by DriversController#index as HTML
+  [1m[36mDriver Load (0.4ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.3ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 1]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.1ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 2]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (1.7ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 3]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses" WHERE "buses"."driver_id" = ?[0m  [["driver_id", 4]]
+[active_model_serializers]   ↳ app/controllers/drivers_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (64.5ms)
+Completed 200 OK in 79ms (Views: 76.0ms | ActiveRecord: 2.6ms | Allocations: 5971)
+
+
+Started GET "/buses" for 127.0.0.1 at 2023-08-03 15:46:31 +0300
+Processing by BusesController#index as HTML
+  [1m[36mBus Load (0.3ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.3ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBooking Load (0.4ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bus_id" = ?[0m  [["bus_id", 1]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bus_id" = ?[0m  [["bus_id", 2]]
+[active_model_serializers]   ↳ app/controllers/buses_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (100.69ms)
+Completed 200 OK in 109ms (Views: 107.0ms | ActiveRecord: 1.4ms | Allocations: 5881)
+
+

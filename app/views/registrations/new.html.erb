@@ -1,0 +1,19 @@
+<!-- app/views/registrations/new.html.erb -->
+<h1>Signup Page</h1>
+<%= form_with(model: :registration, url: signup_path) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation %>
+
+  <%= form.select :profile_type, options_for_select(['customer', 'driver', 'admin']), include_blank: 'Select Profile Type' %>
+
+  <%= form.submit 'Signup' %>
+<% end %>
