@@ -1,9 +1,7 @@
-# app/controllers/registrations_controller.rb
-
 class RegistrationsController < ApplicationController
-  def new
-    # Render the signup form
-  end
+ def new
+ 
+ end
 
   def create
     profile_type = params[:profile_type]
@@ -15,43 +13,54 @@ class RegistrationsController < ApplicationController
     when 'admin'
       create_admin
     else
-      redirect_to signup_path, alert: 'Invalid profile type.'
+      render json: { error: 'Invalid profile type.' }, status: :unprocessable_entity
     end
   end
 
   private
 
   def create_customer
-    customer = Customer.new(registration_params)
+    customer = Customer.create(registration_params)
     if customer.save
       session[:user_id] = customer.id
-      redirect_to customer_path(customer), notice: 'Customer account created successfully.'
+      render json: { 
+        user: customer,
+        notice: 'Customer account created successfully.',
+        additional_data: 'Additional data for customer' # Add any additional data you want to include
+      }, status: :created
     else
-      render :new
+      render json: { errors: customer.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def create_driver
-    driver = Driver.new(registration_params)
+    driver = Driver.create(registration_params)
     if driver.save
       session[:user_id] = driver.id
-      redirect_to driver_path(driver), notice: 'Driver account created successfully.'
+      render json: { 
+        user: driver,
+        notice: 'Driver account created successfully.',
+        additional_data: 'Additional data for driver' # Add any additional data you want to include
+      }, status: :created
     else
-      render :new
+      render json: { errors: driver.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def create_admin
-    admin = Admin.new(registration_params)
+    admin = Admin.create(registration_params)
     if admin.save
       session[:user_id] = admin.id
-      redirect_to admin_path(admin), notice: 'Admin account created successfully.'
+      render json: { 
+        user: admin,
+        notice: 'Admin account created successfully.',
+        additional_data: 'Additional data for admin' # Add any additional data you want to include
+      }, status: :created
     else
-      render :new
+      render json: { errors: admin.errors.full_messages }, status: :unprocessable_entity
     end
   end
-
   def registration_params
-    params.require(:registration).permit(:name, :email, :password, :password_confirmation)
+    params.require(:registration).permit(:name, :email, :password, :admin_id)
   end
 end

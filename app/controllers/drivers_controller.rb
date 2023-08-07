@@ -1,6 +1,6 @@
 # app/controllers/drivers_controller.rb
 class DriversController < ApplicationController
-  before_action :set_driver, only: [:show, :update, :destroy]
+  # before_action :set_driver
 
   def index
     @drivers = Driver.all
@@ -12,9 +12,9 @@ class DriversController < ApplicationController
   end
 
   def create
-    @driver = Driver.new(driver_params)
+    @driver = Driver.create(driver_params)
 
-    if @driver.save
+    if @driver
       render json: @driver, status: :created
     else
       render json: @driver.errors, status: :unprocessable_entity
@@ -40,6 +40,6 @@ class DriversController < ApplicationController
   end
 
   def driver_params
-    params.require(:driver).permit(:name, :email, :password)
+    params.require(:driver).permit(:name, :email, :password, buses: [:number_of_seats, :cost_per_seat])
   end
 end

@@ -1,7 +1,7 @@
 # app/controllers/admins_controller.rb
 class AdminsController < ApplicationController
-  before_action :authorize_request
-  before_action :set_admin, only: [:show, :update, :destroy]
+  # before_action :authorize_request
+  # before_action :set_admin, only: [:show, :update, :destroy]
 
   def index
     @admins = Admin.all
@@ -41,6 +41,6 @@ class AdminsController < ApplicationController
   end
 
   def admin_params
-    params.require(:admin).permit(:name, :email, :password, :super)
+    params.require(:admin).permit(:name, :email, :password_digest)
   end
 end

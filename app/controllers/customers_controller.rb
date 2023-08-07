@@ -1,7 +1,7 @@
 # app/controllers/customers_controller.rb
 class CustomersController < ApplicationController
-  before_action :authorize_request, except: :create
-  before_action :set_customer, only: [:show, :update, :destroy]
+  # before_action :authorize_request, except: :create
+  # before_action :set_customer, only: [:show, :update, :destroy]
 
   def index
     @customers = Customer.all
@@ -41,6 +41,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:name, :email, :password)
+    params.require(:customer).permit(:name, :email, :password_digest, :admin_id)
   end
 end

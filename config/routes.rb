@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
   # Authentication
-  get '/login', to: 'sessions#new', as: :login
-  get '/signup', to: 'registrations#new', as: :signup
+  post '/api/login', to: 'sessions#new'
+  post '/api/signup', to: 'registrations#new'
+  post '/mpesa/payment', to: 'mpesa#payment'
   # Drivers
-  resources :drivers, except: [:new, :edit]
+  resources :drivers
 
   # Customers
-  resources :customers, except: [:new, :edit]
+  resources :customers
 
   # Buses
-  resources :buses, except: [:new, :edit]
+  resources :buses
 
   # Bookings
-  resources :bookings, except: [:new, :edit]
+  resources :bookings
 
   # Admins
-  resources :admins, except: [:new, :edit]
+  resources :admins
 end

@@ -1,7 +1,7 @@
 class BusesController < ApplicationController
   include ActionController::Cookies
   before_action :set_bus, only: [:show, :update, :destroy]
-  include ActionController::Cookies
+ 
   def index
     @buses = Bus.all
     render json: @buses

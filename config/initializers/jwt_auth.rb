@@ -4,7 +4,7 @@ require 'jwt'
 
 JWT_SECRET_KEY = Rails.application.credentials.secret_key_base
 JWT_ALGORITHM = 'HS256'
-JWT_EXPIRATION_TIME = 1.day.to_i # Set the expiration time for the token (1 day in this example)
+JWT_EXPIRATION_TIME = 10.day.to_i # Set the expiration time for the token (1 day in this example)
 
 def encode_token(payload)
   JWT.encode(payload, JWT_SECRET_KEY, JWT_ALGORITHM)
