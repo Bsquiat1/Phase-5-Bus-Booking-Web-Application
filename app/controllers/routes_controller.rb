@@ -1,4 +1,4 @@
-# app/controllers/routes_controller.rb
+# app/controllers/routes_controller.rb.
 
 class RoutesController < ApplicationController
     def index
