@@ -1,5 +1,4 @@
 # seeds.rb
-
 # Admins
 admins = Admin.create([
   { name: 'Admin1', email: 'admin1@example.com', password_digest: 'password1' },
