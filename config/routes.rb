@@ -16,4 +16,7 @@ Rails.application.routes.draw do
 
   # Admins
   resources :admins, except: [:new, :edit]
+  #routes 
+resources :routes, only: [:index,:show], path: 'routes'
+
 end

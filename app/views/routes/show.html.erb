@@ -1,0 +1,9 @@
+<!-- app/views/routes/show.html.erb -->
+
+<h1>Available Buses for <%= @route.name %></h1>
+
+<% @buses.each do |bus| %>
+  <h3>Bus Registration Number: <%= bus.registration_number %></h3>
+  <p>Driver: <%= bus.driver.name %></p>
+  <hr>
+<% end %>

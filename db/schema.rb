@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_03_115339) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_09_090144) do
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -40,7 +40,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_115339) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.integer "route_id", null: false
     t.index ["driver_id"], name: "index_buses_on_driver_id"
+    t.index ["route_id"], name: "index_buses_on_route_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -65,9 +67,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_115339) do
     t.index ["admin_id"], name: "index_drivers_on_admin_id"
   end
 
+  create_table "routes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "bookings", "buses"
   add_foreign_key "bookings", "customers"
   add_foreign_key "buses", "drivers"
+  add_foreign_key "buses", "routes"
   add_foreign_key "customers", "admins"
   add_foreign_key "drivers", "admins"
 end

@@ -1615,3 +1615,660 @@ Processing by BusesController#index as */*
 Completed 200 OK in 94ms (Views: 90.7ms | ActiveRecord: 2.8ms | Allocations: 23064)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRoutes (20230809084616)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (141.6ms)[0m  [1m[35mCREATE TABLE "routes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (18.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230809084616"]]
+  [1m[36mTRANSACTION (245.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (14.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBooking Destroy (69.8ms)[0m  [1m[31mDELETE FROM "bookings" WHERE "bookings"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (114.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBooking Destroy (0.6ms)[0m  [1m[31mDELETE FROM "bookings" WHERE "bookings"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (99.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBus Load (0.8ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBooking Load (0.6ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bus_id" = ?[0m  [["bus_id", 1]]
+  [1m[36mBus Destroy (0.8ms)[0m  [1m[31mDELETE FROM "buses" WHERE "buses"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (180.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBooking Load (0.4ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bus_id" = ?[0m  [["bus_id", 2]]
+  [1m[36mBus Destroy (0.7ms)[0m  [1m[31mDELETE FROM "buses" WHERE "buses"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (107.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDriver Load (0.9ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Destroy (23.8ms)[0m  [1m[31mDELETE FROM "drivers" WHERE "drivers"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (271.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Destroy (1.0ms)[0m  [1m[31mDELETE FROM "drivers" WHERE "drivers"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (106.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Destroy (0.8ms)[0m  [1m[31mDELETE FROM "drivers" WHERE "drivers"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (106.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Destroy (0.8ms)[0m  [1m[31mDELETE FROM "drivers" WHERE "drivers"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (100.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Destroy (0.9ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (107.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Destroy (0.9ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (108.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.5ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (105.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.5ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (100.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.5ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (101.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.7ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (131.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.7ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (100.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (1.0ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (148.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.7ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (100.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.5ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (122.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (1.9ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (115.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "admin1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 08:58:34.382282"], ["updated_at", "2023-08-09 08:58:34.382282"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (107.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "admin2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 08:58:34.868678"], ["updated_at", "2023-08-09 08:58:34.868678"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (105.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.6ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (97.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.6ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (109.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (1.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "admin1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 08:59:41.403971"], ["updated_at", "2023-08-09 08:59:41.403971"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (252.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "admin2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 08:59:41.988614"], ["updated_at", "2023-08-09 08:59:41.988614"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (112.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  [1m[36mDriver Load (0.9ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.5ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (98.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.9ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (107.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Create (0.6ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Route A"], ["created_at", "2023-08-09 09:00:54.368658"], ["updated_at", "2023-08-09 09:00:54.368658"]]
+  [1m[36mTRANSACTION (154.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Route B"], ["created_at", "2023-08-09 09:00:54.546445"], ["updated_at", "2023-08-09 09:00:54.546445"]]
+  [1m[36mTRANSACTION (101.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Create (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Route C"], ["created_at", "2023-08-09 09:00:54.654631"], ["updated_at", "2023-08-09 09:00:54.654631"]]
+  [1m[36mTRANSACTION (153.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "admin1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 09:00:55.156031"], ["updated_at", "2023-08-09 09:00:55.156031"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (179.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "admin2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 09:00:55.653529"], ["updated_at", "2023-08-09 09:00:55.653529"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (114.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRouteToBuses (20230809090144)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abuses" ("id" integer NOT NULL PRIMARY KEY, "number_of_seats" integer NOT NULL, "cost_per_seat" decimal NOT NULL, "route" varchar NOT NULL, "time_of_travel" datetime NOT NULL, "driver_id" integer NOT NULL, "registration_number" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "tindex_abuses_on_driver_id" ON "abuses" ("driver_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "abuses" ("id","number_of_seats","cost_per_seat","route","time_of_travel","driver_id","registration_number","created_at","updated_at","name")
+                     SELECT "id","number_of_seats","cost_per_seat","route","time_of_travel","driver_id","registration_number","created_at","updated_at","name" FROM "buses"[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "buses"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "buses" ("id" integer NOT NULL PRIMARY KEY, "number_of_seats" integer NOT NULL, "cost_per_seat" decimal NOT NULL, "route" varchar NOT NULL, "time_of_travel" datetime NOT NULL, "driver_id" integer NOT NULL, "registration_number" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar DEFAULT NULL, "route_id" integer NOT NULL, CONSTRAINT "fk_rails_bf873451d5"
+FOREIGN KEY ("driver_id")
+  REFERENCES "drivers" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_buses_on_driver_id" ON "buses" ("driver_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "buses" ("id","number_of_seats","cost_per_seat","route","time_of_travel","driver_id","registration_number","created_at","updated_at","name")
+                     SELECT "id","number_of_seats","cost_per_seat","route","time_of_travel","driver_id","registration_number","created_at","updated_at","name" FROM "abuses"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "abuses"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_buses_on_route_id" ON "buses" ("route_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abuses" ("id" integer NOT NULL PRIMARY KEY, "number_of_seats" integer NOT NULL, "cost_per_seat" decimal NOT NULL, "route" varchar NOT NULL, "time_of_travel" datetime NOT NULL, "driver_id" integer NOT NULL, "registration_number" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar DEFAULT NULL, "route_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_abuses_on_route_id" ON "abuses" ("route_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "tindex_abuses_on_driver_id" ON "abuses" ("driver_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "abuses" ("id","number_of_seats","cost_per_seat","route","time_of_travel","driver_id","registration_number","created_at","updated_at","name","route_id")
+                     SELECT "id","number_of_seats","cost_per_seat","route","time_of_travel","driver_id","registration_number","created_at","updated_at","name","route_id" FROM "buses"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "buses"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "buses" ("id" integer NOT NULL PRIMARY KEY, "number_of_seats" integer NOT NULL, "cost_per_seat" decimal NOT NULL, "route" varchar NOT NULL, "time_of_travel" datetime NOT NULL, "driver_id" integer NOT NULL, "registration_number" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar DEFAULT NULL, "route_id" integer NOT NULL, CONSTRAINT "fk_rails_bf873451d5"
+FOREIGN KEY ("driver_id")
+  REFERENCES "drivers" ("id")
+, CONSTRAINT "fk_rails_5b8823fb80"
+FOREIGN KEY ("route_id")
+  REFERENCES "routes" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_buses_on_driver_id" ON "buses" ("driver_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_buses_on_route_id" ON "buses" ("route_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "buses" ("id","number_of_seats","cost_per_seat","route","time_of_travel","driver_id","registration_number","created_at","updated_at","name","route_id")
+                     SELECT "id","number_of_seats","cost_per_seat","route","time_of_travel","driver_id","registration_number","created_at","updated_at","name","route_id" FROM "abuses"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "abuses"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230809090144"]]
+  [1m[36mTRANSACTION (150.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mBus Load (0.2ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.5ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (138.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (1.8ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (100.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Destroy (1.4ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (118.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (52.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Destroy (1.1ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (120.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Destroy (1.1ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (168.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "admin1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 09:02:36.749136"], ["updated_at", "2023-08-09 09:02:36.749136"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (120.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "admin2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 09:02:37.252922"], ["updated_at", "2023-08-09 09:02:37.252922"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (115.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mBus Load (0.3ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  [1m[36mDriver Load (0.3ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.4ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (106.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.7ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (101.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "admin1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 09:04:48.158092"], ["updated_at", "2023-08-09 09:04:48.158092"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (105.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "admin2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 09:04:48.671740"], ["updated_at", "2023-08-09 09:04:48.671740"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (120.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Route A"], ["created_at", "2023-08-09 09:04:48.822561"], ["updated_at", "2023-08-09 09:04:48.822561"]]
+  [1m[36mTRANSACTION (260.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Create (0.9ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Route B"], ["created_at", "2023-08-09 09:04:49.095051"], ["updated_at", "2023-08-09 09:04:49.095051"]]
+  [1m[36mTRANSACTION (108.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Create (0.8ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Route C"], ["created_at", "2023-08-09 09:04:49.216140"], ["updated_at", "2023-08-09 09:04:49.216140"]]
+  [1m[36mTRANSACTION (133.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBus Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "buses" WHERE "buses"."registration_number" = ? LIMIT ?[0m  [["registration_number", "ABC123"], ["LIMIT", 1]]
+  [1m[36mDriver Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mBus Create (1.1ms)[0m  [1m[32mINSERT INTO "buses" ("number_of_seats", "cost_per_seat", "route", "time_of_travel", "driver_id", "registration_number", "created_at", "updated_at", "name", "route_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number_of_seats", 50], ["cost_per_seat", 10.5], ["route", nil], ["time_of_travel", "2023-08-10 09:04:50.155910"], ["driver_id", nil], ["registration_number", "ABC123"], ["created_at", "2023-08-09 09:04:50.237570"], ["updated_at", "2023-08-09 09:04:50.237570"], ["name", nil], ["route_id", 4]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mBus Load (0.3ms)[0m  [1m[34mSELECT "buses".* FROM "buses"[0m
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.5ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (304.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Destroy (0.9ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (99.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Destroy (2.3ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (273.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Destroy (0.5ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (99.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Destroy (0.9ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (110.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin1@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin1"], ["email", "admin1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 09:05:53.018585"], ["updated_at", "2023-08-09 09:05:53.018585"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (110.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@example.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "is_superadmin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin2"], ["email", "admin2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-08-09 09:05:53.500748"], ["updated_at", "2023-08-09 09:05:53.500748"], ["is_superadmin", 0]]
+  [1m[36mTRANSACTION (120.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Create (2.3ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Route A"], ["created_at", "2023-08-09 09:05:53.627647"], ["updated_at", "2023-08-09 09:05:53.627647"]]
+  [1m[36mTRANSACTION (115.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Create (0.7ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Route B"], ["created_at", "2023-08-09 09:05:53.769697"], ["updated_at", "2023-08-09 09:05:53.769697"]]
+  [1m[36mTRANSACTION (109.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Create (0.9ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Route C"], ["created_at", "2023-08-09 09:05:53.891498"], ["updated_at", "2023-08-09 09:05:53.891498"]]
+  [1m[36mTRANSACTION (105.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBus Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "buses" WHERE "buses"."registration_number" = ? LIMIT ?[0m  [["registration_number", "ABC123"], ["LIMIT", 1]]
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."email" = ? LIMIT ?[0m  [["email", "driver1@example.com"], ["LIMIT", 1]]
+  [1m[36mBus Create (0.7ms)[0m  [1m[32mINSERT INTO "buses" ("number_of_seats", "cost_per_seat", "route", "time_of_travel", "driver_id", "registration_number", "created_at", "updated_at", "name", "route_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number_of_seats", 50], ["cost_per_seat", 10.5], ["route", nil], ["time_of_travel", "2023-08-10 09:05:54.774301"], ["driver_id", nil], ["registration_number", "ABC123"], ["created_at", "2023-08-09 09:05:54.796018"], ["updated_at", "2023-08-09 09:05:54.796018"], ["name", nil], ["route_id", 7]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-08-09 12:09:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 21.0ms | Allocations: 528)
+Completed 200 OK in 4879ms (Views: 238.6ms | ActiveRecord: 0.0ms | Allocations: 281001)
+
+
+Started GET "/admins" for 127.0.0.1 at 2023-08-09 12:11:11 +0300
+Processing by AdminsController#index as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."admin_id" = ?[0m  [["admin_id", 1]]
+[active_model_serializers]   ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."admin_id" = ?[0m  [["admin_id", 1]]
+[active_model_serializers]   ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."admin_id" = ?[0m  [["admin_id", 2]]
+[active_model_serializers]   ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.4ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."admin_id" = ?[0m  [["admin_id", 2]]
+[active_model_serializers]   ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (69.91ms)
+Completed 200 OK in 358ms (Views: 321.1ms | ActiveRecord: 4.8ms | Allocations: 23384)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-08-09 12:11:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/roures" for 127.0.0.1 at 2023-08-09 12:11:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/roures"):
+  
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:11:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+Started GET "/routes/1" for 127.0.0.1 at 2023-08-09 12:13:43 +0300
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:6:in `show'
+Completed 404 Not Found in 23ms (ActiveRecord: 2.0ms | Allocations: 2286)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Route with 'id'=1):
+  
+app/controllers/routes_controller.rb:6:in `show'
+Started GET "/route" for 127.0.0.1 at 2023-08-09 12:22:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/route"):
+  
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:22:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:22:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:22:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:22:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:22:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:36 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 5ms (Allocations: 1204)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:36 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 2ms (Allocations: 61)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:37 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 38)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:37 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 38)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:41 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 38)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:45 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 45)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:46 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 1ms (Allocations: 38)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:46 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 38)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:46 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 38)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:46 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 38)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:24:46 +0300
+Processing by RoutesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 38)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:26:55 +0300
+Processing by RoutesController#index as HTML
+Completed 200 OK in 5ms (Views: 0.3ms | Allocations: 1265)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:26:56 +0300
+Processing by RoutesController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 82)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:26:57 +0300
+Processing by RoutesController#index as HTML
+Completed 200 OK in 3ms (Views: 0.6ms | Allocations: 66)
+
+
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:27:01 +0300
+Processing by RoutesController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 66)
+
+
+Started GET "/routes/1" for 127.0.0.1 at 2023-08-09 12:28:49 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes/1"):
+  
+Started GET "/routes/:1" for 127.0.0.1 at 2023-08-09 12:28:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes/:1"):
+  
+Started GET "/routes/:1" for 127.0.0.1 at 2023-08-09 12:30:22 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes/:1"):
+  
+Started GET "/routes/:1" for 127.0.0.1 at 2023-08-09 12:30:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes/:1"):
+  
+Started GET "/routes/:1" for 127.0.0.1 at 2023-08-09 12:30:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routes/:1"):
+  
+Started GET "/routes/:1" for 127.0.0.1 at 2023-08-09 12:31:02 +0300
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>":1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:9:in `show'
+Completed 404 Not Found in 19ms (ActiveRecord: 1.0ms | Allocations: 2279)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Route with 'id'=:1):
+  
+app/controllers/routes_controller.rb:9:in `show'
+Started GET "/routes" for 127.0.0.1 at 2023-08-09 12:35:30 +0300
+Processing by RoutesController#index as HTML
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 127)
+
+
+Started GET "/routes/:1" for 127.0.0.1 at 2023-08-09 12:37:15 +0300
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>":1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:9:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms | Allocations: 673)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Route with 'id'=:1):
+  
+app/controllers/routes_controller.rb:9:in `show'
+Started GET "/routers" for 127.0.0.1 at 2023-08-09 12:37:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/routers"):
+  
+Started GET "/login" for 127.0.0.1 at 2023-08-09 12:37:54 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 90)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-09 12:38:02 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 29)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-09 12:38:07 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.7ms | Allocations: 298)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 1176)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-09 12:38:14 +0300
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 47)
+
+
+Started GET "/signup" for 127.0.0.1 at 2023-08-09 12:38:20 +0300
+Processing by RegistrationsController#new as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 89)
+
+
+Started GET "/admins" for 127.0.0.1 at 2023-08-09 12:38:30 +0300
+Processing by AdminsController#index as HTML
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (8.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."admin_id" = ?[0m  [["admin_id", 1]]
+[active_model_serializers]   ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.5ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."admin_id" = ?[0m  [["admin_id", 1]]
+[active_model_serializers]   ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."admin_id" = ?[0m  [["admin_id", 2]]
+[active_model_serializers]   ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."admin_id" = ?[0m  [["admin_id", 2]]
+[active_model_serializers]   ↳ app/controllers/admins_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (108.36ms)
+Completed 200 OK in 148ms (Views: 118.9ms | ActiveRecord: 9.3ms | Allocations: 14156)
+
+
+Started GET "/adminsr" for 127.0.0.1 at 2023-08-09 12:38:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/adminsr"):
+  
+Started GET "/drivers" for 127.0.0.1 at 2023-08-09 12:38:55 +0300
+Processing by DriversController#index as HTML
+  [1m[36mDriver Load (1.3ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  ↳ app/controllers/drivers_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 1.3ms | Allocations: 1201)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-09 12:39:13 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.87ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 1191)
+
+
