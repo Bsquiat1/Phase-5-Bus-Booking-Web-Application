@@ -1,6 +1,7 @@
 # app/controllers/bookings_controller.rb
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :destroy]
+  before_action :authorize_request, :current_user, only: [:create]
 
   def index
     @bookings = Booking.all
