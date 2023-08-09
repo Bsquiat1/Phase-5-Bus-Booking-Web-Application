@@ -1,6 +1,6 @@
 class BusesController < ApplicationController
   include ActionController::Cookies
-  before_action :set_bus, only: [:show, :update, :destroy]
+  # before_action :set_bus, only: [:show, :update, :destroy]
  
   def index
     @buses = Bus.all
@@ -40,6 +40,6 @@ class BusesController < ApplicationController
   end
 
   def bus_params
-    params.require(:bus).permit(:number_of_seats, :route, :cost_per_seat)
+    params.require(:bus).permit(:number_of_seats, :cost_per_seat, :route, :time_of_travel, :registration_number,:driver_id)
   end
 end
