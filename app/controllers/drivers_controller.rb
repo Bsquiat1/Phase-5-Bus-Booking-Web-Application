@@ -14,7 +14,7 @@ class DriversController < ApplicationController
   def create
     @driver = Driver.create(driver_params)
 
-    if @driver.save
+    if @driver
       render json: @driver, status: :created
     else
       render json: @driver.errors, status: :unprocessable_entity
@@ -40,6 +40,6 @@ class DriversController < ApplicationController
   end
 
   def driver_params
-    params.require(:driver).permit(:name, :email, :password_digest, :admin_id)
+    params.require(:driver).permit(:name, :email, :password, buses: [:number_of_seats, :cost_per_seat])
   end
 end
