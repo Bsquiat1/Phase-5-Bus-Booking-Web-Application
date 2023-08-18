@@ -39,10 +39,17 @@ We follow a set of contribution guidelines to ensure code quality and maintainab
 ## Project Leads
 
 
+  
+  - Denis Were
+  - Sherry Kisilu
   - Ernest Okiror
-  -Denis Were
-  -Sherry Kisilu
   - Antonio Lambado
 
 Feel free to contact the project leads with any queries or open an issue in this repository for assistance.
 Link to front-end https://github.com/Bsquiat1/Phase-5-Bus-Booking-Web-Application-Front-End
+
+
+
+
+
+Alternative backend link - https://github.com/Bsquiat1/alt-bus-booking-app-backend
